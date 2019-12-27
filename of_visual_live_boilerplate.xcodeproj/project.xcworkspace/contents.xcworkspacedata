@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "group:../bin/data"
+      name = "data">
+      <FileRef
+         location = "group:/Users/nicolabertelloni/Developer/of_v0.11.0_osx/apps/of_visual_live_boilerplate/src/Midi/MidiLabelizer.cpp">
+      </FileRef>
+      <Group
+         location = "group:shader"
+         name = "shader">
+         <FileRef
+            location = "group:shader.vert">
+         </FileRef>
+         <FileRef
+            location = "group:shader.frag">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:themes"
+         name = "themes">
+         <FileRef
+            location = "group:three.json">
+         </FileRef>
+         <FileRef
+            location = "group:one.json">
+         </FileRef>
+         <FileRef
+            location = "group:two.json">
+         </FileRef>
+      </Group>
+   </Group>
+   <FileRef
+      location = "self:">
+   </FileRef>
+</Workspace>
