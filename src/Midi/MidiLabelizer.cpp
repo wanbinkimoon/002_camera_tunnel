@@ -25,7 +25,7 @@ void ofMidiModule::labelizer(){
   knobsONELabel[14] = "Knob - 15";
   knobsONELabel[15] = "Knob - 16";
   
-  padsONELabel[0] = "Pad - 1";
+  padsONELabel[0] = "VIDEO";
   padsONELabel[1] = "Pad - 2";
   padsONELabel[2] = "Pad - 3";
   padsONELabel[3] = "Pad - 4";
@@ -36,7 +36,7 @@ void ofMidiModule::labelizer(){
   
   //   ----------------------------------------------------
   
-  knobsTWOLabel[0] = "Knob - 1";
+  knobsTWOLabel[0] = "CIRC NUMB";
   knobsTWOLabel[1] = "Knob - 2";
   knobsTWOLabel[2] = "Knob - 3";
   knobsTWOLabel[3] = "Knob - 4";
@@ -53,8 +53,8 @@ void ofMidiModule::labelizer(){
   knobsTWOLabel[14] = "Knob - 15";
   knobsTWOLabel[15] = "Knob - 16";
   
-  padsTWOLabel[0] = "Pad - 1";
-  padsTWOLabel[1] = "Pad - 2";
+  padsTWOLabel[0] = "CIRC";
+  padsTWOLabel[1] = "CIRC FILL";
   padsTWOLabel[2] = "Pad - 3";
   padsTWOLabel[3] = "Pad - 4";
   padsTWOLabel[4] = "Pad - 5";

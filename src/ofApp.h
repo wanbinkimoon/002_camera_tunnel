@@ -19,6 +19,9 @@ public:
   void update();
   void draw();
   
+  void camera();
+  void circle();
+  
   void keyPressed(int key);
   void keyReleased(int key);
   void mouseMoved(int x, int y );
@@ -32,6 +35,10 @@ public:
   void gotMessage(ofMessage msg);
   
   ofShader shader;
+  
+  ofVideoGrabber vidGrabber;
+  int camWidth;
+  int camHeight;
   
   shared_ptr<ofMidiModule> midi;
   shared_ptr<ofSoundModule> sound;

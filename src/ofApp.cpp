@@ -3,12 +3,21 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
 //  shader.load("shader/shader");
+  
+  camWidth = ofGetWidth();
+  camHeight = ofGetHeight();
+  
+  vidGrabber.setVerbose(true);
+  vidGrabber.setup(camWidth,camHeight);
+
+  ofEnableAlphaBlending();
+  
   ofBackground(0);
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-  
+    vidGrabber.update();
 }
 
 //--------------------------------------------------------------
@@ -17,8 +26,10 @@ void ofApp::draw(){
 //  shader.setUniform1f("u_time", ofGetElapsedTimef());
 //  shader.setUniform2f("u_resolution", ofGetWidth(), ofGetHeight());
   
-  ofSetColor(color->palette[0]);
-  ofDrawCircle(ofGetWidth()*0.5,ofGetHeight()*0.5, midi->knobsONE[0] + sound->centroid * ofGetWidth()*0.45);
+  if(midi->padsONE[0]) ofApp::camera();
+  
+  if(midi->padsTWO[0]) ofApp::circle();
+  ofApp::circle();
 //  shader.end();
 }
 
@@ -26,9 +37,8 @@ void ofApp::draw(){
 void ofApp::keyPressed(int key){
   std::cout << "Letter pressed: " << key << "\n";
   
-//  F = 102
-  if(key == 102) FULLSCREEN = !FULLSCREEN;
-    
+  if(key == 'f' || key == 'F') FULLSCREEN = !FULLSCREEN;
+  if(key == 's' || key == 'S') vidGrabber.videoSettings();
 }
 
 //--------------------------------------------------------------
