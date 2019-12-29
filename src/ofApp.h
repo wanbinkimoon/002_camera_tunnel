@@ -19,6 +19,7 @@ public:
   void update();
   void draw();
   
+  void scene();
   void camera();
   void circle();
   
@@ -40,8 +41,13 @@ public:
   int camWidth;
   int camHeight;
   
+  float sceneRotation = 0;
+  float sceneRotationInc = 0.1;
+  float sceneRotationIncFactor = .001;
+  
   shared_ptr<ofMidiModule> midi;
   shared_ptr<ofSoundModule> sound;
   shared_ptr<ofColorModule> color;
+  
   bool FULLSCREEN;
 };

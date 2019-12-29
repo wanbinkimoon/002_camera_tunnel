@@ -2,7 +2,11 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-//  shader.load("shader/shader");
+  ofSetDataPathRoot("../Resources/data/");
+
+//  shad4er.load("shader/shader");
+  color->palette[0] = ofColor(36,36,22,255);
+  color->palette[1] = ofColor(124,127,255,255);
   
   camWidth = ofGetWidth();
   camHeight = ofGetHeight();
@@ -12,7 +16,7 @@ void ofApp::setup(){
 
   ofEnableAlphaBlending();
   
-  ofBackground(0);
+  ofBackground(color->palette[0]);
 }
 
 //--------------------------------------------------------------
@@ -22,14 +26,15 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+  ofBackground(color->palette[0]);
 //  shader.begin();
 //  shader.setUniform1f("u_time", ofGetElapsedTimef());
 //  shader.setUniform2f("u_resolution", ofGetWidth(), ofGetHeight());
+  ofApp::scene();
   
   if(midi->padsONE[0]) ofApp::camera();
-  
   if(midi->padsTWO[0]) ofApp::circle();
-  ofApp::circle();
+
 //  shader.end();
 }
 
@@ -39,6 +44,8 @@ void ofApp::keyPressed(int key){
   
   if(key == 'f' || key == 'F') FULLSCREEN = !FULLSCREEN;
   if(key == 's' || key == 'S') vidGrabber.videoSettings();
+  
+//  midi->keyPressed(key);
 }
 
 //--------------------------------------------------------------

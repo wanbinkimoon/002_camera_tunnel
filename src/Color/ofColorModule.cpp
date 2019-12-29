@@ -7,6 +7,8 @@
 
 #include "ofColorModule.h"
 void ofColorModule::setup(){
+  ofSetDataPathRoot("../Resources/data/");
+
   ofSetWindowTitle("Color Palette PICKER");
   
   colorPanelONE = gui.addPanel("COLOR PALETTE");

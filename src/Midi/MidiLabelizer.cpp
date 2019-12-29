@@ -5,10 +5,10 @@
 //  Created by nicola bertelloni on 27/12/2019.
 //
 
-#include <stdio.h>
 #include "ofMidiModule.h"
+
 void ofMidiModule::labelizer(){
-  knobsONELabel[0] = "Knob - 1";
+  knobsONELabel[0] = "ROTATE SCE";
   knobsONELabel[1] = "Knob - 2";
   knobsONELabel[2] = "Knob - 3";
   knobsONELabel[3] = "Knob - 4";
@@ -16,7 +16,7 @@ void ofMidiModule::labelizer(){
   knobsONELabel[5] = "Knob - 6";
   knobsONELabel[6] = "Knob - 7";
   knobsONELabel[7] = "Knob - 8";
-  knobsONELabel[8] = "Knob - 9";
+  knobsONELabel[8] = "ROTATE INC";
   knobsONELabel[9] = "Knob - 10";
   knobsONELabel[10] = "Knob - 11";
   knobsONELabel[11] = "Knob - 12";
@@ -37,9 +37,9 @@ void ofMidiModule::labelizer(){
   //   ----------------------------------------------------
   
   knobsTWOLabel[0] = "CIRC NUMB";
-  knobsTWOLabel[1] = "Knob - 2";
-  knobsTWOLabel[2] = "Knob - 3";
-  knobsTWOLabel[3] = "Knob - 4";
+  knobsTWOLabel[1] = "CIRC RAD";
+  knobsTWOLabel[2] = "SOUND FRAG";
+  knobsTWOLabel[3] = "SOUND PUMP";
   knobsTWOLabel[4] = "Knob - 5";
   knobsTWOLabel[5] = "Knob - 6";
   knobsTWOLabel[6] = "Knob - 7";
@@ -55,10 +55,10 @@ void ofMidiModule::labelizer(){
   
   padsTWOLabel[0] = "CIRC";
   padsTWOLabel[1] = "CIRC FILL";
-  padsTWOLabel[2] = "Pad - 3";
+  padsTWOLabel[2] = "CIRC POINTS";
   padsTWOLabel[3] = "Pad - 4";
   padsTWOLabel[4] = "Pad - 5";
   padsTWOLabel[5] = "Pad - 6";
   padsTWOLabel[6] = "Pad - 7";
-  padsTWOLabel[7] = "Pad - 8";
+  padsTWOLabel[7] = "BLEND SCRE";
 };

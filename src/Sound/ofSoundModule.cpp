@@ -8,6 +8,8 @@
 #include "ofSoundModule.h"
 
 void ofSoundModule::setup(){
+  ofSetDataPathRoot("../Resources/data/");
+
   ofSetWindowTitle("Sound Analysis LAB");
   int sampleRate = 44100;
   int bufferSize = 512;
@@ -15,7 +17,6 @@ void ofSoundModule::setup(){
   int inChannels = 2;
   
   soundStream.setup(this, outChannels, inChannels, sampleRate, bufferSize, 3);
-  //setup ofxAudioAnalyzer with the SAME PARAMETERS
   audioAnalyzer.setup(sampleRate, bufferSize, inChannels);
   
   audioPanelONE = gui.addPanel("AUDIO IMPACT");

@@ -10,7 +10,8 @@ public:
   void setup();
   void exit();
   void labelizer();
-  
+  void keyPressed(int key);
+
   ofxMidiIn midiIn;
   void newMidiMessage(ofxMidiMessage& msg);
   

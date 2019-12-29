@@ -2,6 +2,7 @@
 
 //   ----------------------------------------------------
 void ofMidiModule::setup(){
+  ofSetDataPathRoot("../Resources/data/");
   ofSetWindowTitle("MIDI Mad Module");
   ofSetLogLevel(OF_LOG_VERBOSE);
   
@@ -157,6 +158,20 @@ void ofMidiModule::newMidiMessage(ofxMidiMessage &msg) {
     default:
       break;
   }
+}
+void ofMidiModule::keyPressed(int key) {
+//  std::cout << "Letter pressed: " << key << "\n";11
+
+  if(key == '0') channel = true;
+  else if(key == '9') channel = false;
+  else if(key == '1') channel ? padsONE[0] = !padsONE[0] : padsTWO[0] = !padsTWO[0];
+  else if(key == '2') channel ? padsONE[1] = !padsONE[1] : padsTWO[1] = !padsTWO[1];
+  else if(key == '3') channel ? padsONE[2] = !padsONE[2] : padsTWO[2] = !padsTWO[2];
+  else if(key == '4') channel ? padsONE[3] = !padsONE[3] : padsTWO[3] = !padsTWO[3];
+  else if(key == '5') channel ? padsONE[4] = !padsONE[4] : padsTWO[4] = !padsTWO[4];
+  else if(key == '6') channel ? padsONE[5] = !padsONE[5] : padsTWO[5] = !padsTWO[5];
+  else if(key == '7') channel ? padsONE[6] = !padsONE[6] : padsTWO[6] = !padsTWO[6];
+  else if(key == '8') channel ? padsONE[7] = !padsONE[7] : padsTWO[7] = !padsTWO[7];
 }
 //--------------------------------------------------------------
 void ofMidiModule::exit() {
