@@ -46,6 +46,8 @@
 		8F02B619CA83CD2E06C263AF /* MidiLabelizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCDE708A4912A209D157711 /* MidiLabelizer.cpp */; };
 		96D881793A465B099189E933 /* ofxGuiZoomableGraphics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8442D8A7A7F11B5548BE3FB1 /* ofxGuiZoomableGraphics.cpp */; };
 		98355E578D9CCEE106FBC6EC /* ofSoundPlayerExtended.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 685B7F94AF6DEF04EB1C9E20 /* ofSoundPlayerExtended.cpp */; };
+		9ABDBDFA23B96D3C006D51C1 /* ColorLabelizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABDBDF923B96D3C006D51C1 /* ColorLabelizer.cpp */; };
+		9ABDBDFE23B96E5E006D51C1 /* ofPublicScreen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABDBDFC23B96E5E006D51C1 /* ofPublicScreen.cpp */; };
 		9D72A0B4BAED5487D5CD7538 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D1B275EC347E41C380E1179 /* OpenAL.framework */; };
 		B9FE9A0FC5C7439A0EA40D31 /* modules.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9BF5D0EEC4BC309D8644A7F3 /* modules.cpp */; };
 		BCC8D420CBA9217E437D2D76 /* ofxRtMidiIn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F634AA6CA2E3C60F3B87B59A /* ofxRtMidiIn.cpp */; };
@@ -209,6 +211,9 @@
 		9ABDBDF623B6D8D9006D51C1 /* three.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = three.json; sourceTree = "<group>"; };
 		9ABDBDF723B6D8D9006D51C1 /* one.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = one.json; sourceTree = "<group>"; };
 		9ABDBDF823B6D8D9006D51C1 /* two.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = two.json; sourceTree = "<group>"; };
+		9ABDBDF923B96D3C006D51C1 /* ColorLabelizer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ColorLabelizer.cpp; path = Color/ColorLabelizer.cpp; sourceTree = "<group>"; };
+		9ABDBDFC23B96E5E006D51C1 /* ofPublicScreen.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofPublicScreen.cpp; sourceTree = "<group>"; };
+		9ABDBDFD23B96E5E006D51C1 /* ofPublicScreen.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ofPublicScreen.hpp; sourceTree = "<group>"; };
 		9BF5D0EEC4BC309D8644A7F3 /* modules.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = modules.cpp; path = src/modules.cpp; sourceTree = SOURCE_ROOT; };
 		9C216016ADAE41BD3A468B49 /* ofColorModule.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofColorModule.cpp; path = src/Color/ofColorModule.cpp; sourceTree = SOURCE_ROOT; };
 		9D55C918270CC85C38C61140 /* graphutils.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = graphutils.h; path = ../../../addons/ofxAudioAnalyzer/libs/essentia/include/essentia/scheduler/graphutils.h; sourceTree = SOURCE_ROOT; };
@@ -760,6 +765,15 @@
 			path = themes;
 			sourceTree = "<group>";
 		};
+		9ABDBDFB23B96E40006D51C1 /* Public Screen */ = {
+			isa = PBXGroup;
+			children = (
+				9ABDBDFC23B96E5E006D51C1 /* ofPublicScreen.cpp */,
+				9ABDBDFD23B96E5E006D51C1 /* ofPublicScreen.hpp */,
+			);
+			path = "Public Screen";
+			sourceTree = "<group>";
+		};
 		9CBF51184BE294FD9D73043F /* src */ = {
 			isa = PBXGroup;
 			children = (
@@ -849,6 +863,7 @@
 			children = (
 				9C216016ADAE41BD3A468B49 /* ofColorModule.cpp */,
 				3ACEB4A9BCCBF250706B9794 /* ofColorModule.h */,
+				9ABDBDF923B96D3C006D51C1 /* ColorLabelizer.cpp */,
 			);
 			name = Color;
 			sourceTree = "<group>";
@@ -1269,6 +1284,7 @@
 				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
 				9BF5D0EEC4BC309D8644A7F3 /* modules.cpp */,
+				9ABDBDFB23B96E40006D51C1 /* Public Screen */,
 				614687C9665C6CD8098D06A4 /* Midi */,
 				AA6060B59FF88D4235768522 /* Color */,
 				4B40D8E93F6785C684B587FE /* Sound */,
@@ -1463,9 +1479,11 @@
 				2302BCF25C1D2BBFE43ADCE6 /* ofxAudioAnalyzerUnit.cpp in Sources */,
 				477F449F6256389CCDB36FFC /* audiodecoderbase.cpp in Sources */,
 				2761F96388F64FE596863183 /* audiodecodercoreaudio.cpp in Sources */,
+				9ABDBDFE23B96E5E006D51C1 /* ofPublicScreen.cpp in Sources */,
 				87EB71A35D524340AE0A8C4C /* ofxAudioDecoder.cpp in Sources */,
 				C688DEE8EC1EFF0A266883D3 /* Document.cpp in Sources */,
 				D8C5E586C319057792A7D92E /* Element.cpp in Sources */,
+				9ABDBDFA23B96D3C006D51C1 /* ColorLabelizer.cpp in Sources */,
 				FAB5D5A57D66F2406B4066CE /* Events.cpp in Sources */,
 				1E47EA1A0575BB8C39BB0E96 /* Exceptions.cpp in Sources */,
 				1E8A4D9D2831059ADAC237E1 /* Layout.cpp in Sources */,

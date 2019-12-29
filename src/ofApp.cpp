@@ -3,9 +3,9 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
   ofSetDataPathRoot("../Resources/data/");
-
+  ofSetWindowTitle("PREVIEW MONITOR");
 //  shad4er.load("shader/shader");
-  color->palette[0] = ofColor(36,36,22,255);
+  color->palette[0] = ofColor(36,36,55,255);
   color->palette[1] = ofColor(124,127,255,255);
   
   camWidth = ofGetWidth();
@@ -42,8 +42,8 @@ void ofApp::draw(){
 void ofApp::keyPressed(int key){
   std::cout << "Letter pressed: " << key << "\n";
   
-  if(key == 'f' || key == 'F') FULLSCREEN = !FULLSCREEN;
-  if(key == 's' || key == 'S') vidGrabber.videoSettings();
+//  if(key == 'f' || key == 'F') FULLSCREEN = !FULLSCREEN;
+//  if(key == 's' || key == 'S') vidGrabber.videoSettings();
   
 //  midi->keyPressed(key);
 }

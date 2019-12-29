@@ -77,7 +77,7 @@ void ofApp::circle(){
       if(midi->padsTWO[2]) {
         if(!midi->padsTWO[1]) ofEnableBlendMode(OF_BLENDMODE_DISABLED);
         
-        soundImpact = ofMap(soundImpact, 0, 100, 10, 200);
+        soundImpact = ofMap(soundImpact, 0, 100, 100, 500);
         ofSetSphereResolution(6);
         ofDrawSphere(x, y, z, soundImpact * .1);
       }

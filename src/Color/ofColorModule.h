@@ -14,11 +14,14 @@
 class ofColorModule : public ofBaseApp {
 public:
   void setup();
+  void labelizer();
+  
   ofxGui gui;
   ofxGuiPanel* colorPanelONE;
   ofxGuiContainer* colorContONE;
   
   ofParameter<ofColor> palette[8];
+  string paletteLabel[8];
 };
 
 #endif /* ofColorModule_hpp */
