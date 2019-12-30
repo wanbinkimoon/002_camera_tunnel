@@ -12,7 +12,7 @@ void ofApp::scene(){
   ofTranslate(ofGetWidth() * .5, ofGetHeight() * .5);
   
   sceneRotation = ofMap(midi->knobsONE[0], 0, 100, 0, 360);
-  sceneRotationIncFactor = ofMap(midi->knobsONE[8], 0, 100, .001, .1);
+  sceneRotationIncFactor = ofMap(midi->knobsONE[8], 0, 100, .001, 1);
   
   if(midi->knobsONE[8] > 0) sceneRotationInc += sceneRotationIncFactor;
   else sceneRotationInc = 0.1;
@@ -26,6 +26,15 @@ void ofApp::camera(){
   ofPushMatrix();
   ofPushStyle();
   ofTranslate(ofGetWidth() * -.5, ofGetHeight() * -.5);
+  
+  sceneRotation = ofMap(midi->knobsONE[0], 0, 100, 360, 0);
+  sceneRotationIncFactor = ofMap(midi->knobsONE[8], 0, 100, 1, .001);
+  
+  if(midi->knobsONE[8] > 0) sceneRotationInc += sceneRotationIncFactor;
+  else sceneRotationInc = 0.1;
+  
+  float angle = sceneRotation + sceneRotationInc;
+  ofRotateDeg(angle);
   
   ofEnableBlendMode(OF_BLENDMODE_DISABLED);
   ofSetColor(color->palette[0]);
@@ -43,7 +52,7 @@ void ofApp::circle(){
   else ofNoFill();
   
   if(midi->padsTWO[7]) ofEnableBlendMode(OF_BLENDMODE_SCREEN);
-  else ofEnableBlendMode(OF_BLENDMODE_ADD);
+  else ofEnableBlendMode(OF_BLENDMODE_DISABLED);
   
   float circNumb = ofMap(midi->knobsTWO[0], 0, 100, 1, 20);
   
@@ -60,7 +69,17 @@ void ofApp::circle(){
   
   for(unsigned int i = 0; i < circNumb; i++){
     int circAlpha = ofMap(i, 0, circNumb, 100, 250);
-    ofColor circColor = ofColor(color->palette[1], circAlpha);
+    
+    ofColor circColor;
+    
+    
+    int lerpR = ofLerp(color->palette[1]->r, color->palette[2]->r, ofMap(i, 0, circNumb, 0.0, 1.0));
+    int lerpG = ofLerp(color->palette[1]->g, color->palette[2]->g, ofMap(i, 0, circNumb, 0.0, 1.0));
+    int lerpB = ofLerp(color->palette[1]->b, color->palette[2]->b, ofMap(i, 0, circNumb, 0.0, 1.0));
+    int lerpA = ofLerp(color->palette[1]->a, color->palette[2]->a, ofMap(i, 0, circNumb, 0.0, 1.0));
+    if(midi->padsTWO[6]) circColor= ofColor(lerpR, lerpG, lerpB, lerpA);
+    else circColor = ofColor(color->palette[1]);
+    
     ofSetColor(circColor);
     
     
@@ -71,15 +90,31 @@ void ofApp::circle(){
       float angle = ofDegToRad(angleStep * (p + 1));
       float x = cos(angle) * radius;
       float y = sin(angle) * radius;
-      float z = (i + 1) * soundImpact;
+      float z = 10 * i;
   
 //      ofCurveVertex(x, y);
       if(midi->padsTWO[2]) {
         if(!midi->padsTWO[1]) ofEnableBlendMode(OF_BLENDMODE_DISABLED);
+        z = ofMap(soundImpact, 0, 100, -100, 500);
+        float shpereRadius = ofMap(soundImpact, 0, 100, 4, 50);
+        ofSetSphereResolution(2);
         
-        soundImpact = ofMap(soundImpact, 0, 100, 100, 500);
-        ofSetSphereResolution(6);
-        ofDrawSphere(x, y, z, soundImpact * .1);
+        ofPushMatrix();
+        ofTranslate(x, y, z);
+        cubesRotationIncFactor = ofMap(midi->knobsTWO[8], 0, 100, 1, .001);
+        float angle = 0;
+        
+        if(midi->knobsTWO[8] > 0) {
+          cubesRotationInc += cubesRotationIncFactor;
+          angle = cubesRotationInc;
+        };
+        
+        ofRotateXDeg(angle * .75);
+        ofRotateYDeg(angle);
+        ofRotateZDeg(angle * .75);
+
+        ofDrawSphere(0, 0, 0, shpereRadius);
+        ofPopMatrix();
       }
       else ofVertex(x, y, z);
       

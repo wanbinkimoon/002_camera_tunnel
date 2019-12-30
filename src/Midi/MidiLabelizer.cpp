@@ -44,7 +44,7 @@ void ofMidiModule::labelizer(){
   knobsTWOLabel[5] = "Knob - 6";
   knobsTWOLabel[6] = "Knob - 7";
   knobsTWOLabel[7] = "Knob - 8";
-  knobsTWOLabel[8] = "Knob - 9";
+  knobsTWOLabel[8] = "ROTATE CUBES";
   knobsTWOLabel[9] = "Knob - 10";
   knobsTWOLabel[10] = "Knob - 11";
   knobsTWOLabel[11] = "Knob - 12";
@@ -59,6 +59,6 @@ void ofMidiModule::labelizer(){
   padsTWOLabel[3] = "Pad - 4";
   padsTWOLabel[4] = "Pad - 5";
   padsTWOLabel[5] = "Pad - 6";
-  padsTWOLabel[6] = "Pad - 7";
+  padsTWOLabel[6] = "GRADIENT";
   padsTWOLabel[7] = "BLEND SCRE";
 };

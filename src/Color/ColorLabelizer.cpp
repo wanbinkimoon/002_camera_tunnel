@@ -9,8 +9,8 @@
 #include "ofColorModule.h"
 void ofColorModule::labelizer(){
   paletteLabel[0] = "BACKGROUND";
-  paletteLabel[1] = "COL - 2";
-  paletteLabel[2] = "COL - 3";
+  paletteLabel[1] = "CICLE - 1";
+  paletteLabel[2] = "CICLE - 2";
   paletteLabel[3] = "COL - 4";
   paletteLabel[4] = "COL - 5";
   paletteLabel[5] = "COL - 6";
