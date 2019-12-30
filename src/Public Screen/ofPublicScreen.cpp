@@ -25,9 +25,14 @@ void ofPublicScreen::update(){
 void ofPublicScreen::draw(){
    fbo.draw(0, 0);
 }
+
 void ofPublicScreen::keyPressed(int key){
     if(key == 'f' || key == 'F') {
       ofToggleFullscreen();
       fbo.allocate(ofGetWidth(), ofGetHeight(), GL_RGBA );
     };
 };
+
+void ofPublicScreen::windowResized(int w, int h){
+   app->vidGrabber.setup(ofGetWidth(),ofGetHeight());
+}

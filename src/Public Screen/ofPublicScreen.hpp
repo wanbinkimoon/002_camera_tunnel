@@ -18,6 +18,7 @@ public:
   void update();
   void draw();
   void keyPressed(int key);
+  void windowResized(int w, int h);
   
   ofFbo fbo;
   shared_ptr<ofApp> app;

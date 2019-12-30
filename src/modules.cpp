@@ -7,7 +7,6 @@
 
 #include "ofApp.h"
 
-
 void ofApp::scene(){
   ofTranslate(ofGetWidth() * .5, ofGetHeight() * .5);
   
@@ -21,12 +20,17 @@ void ofApp::scene(){
   ofRotateDeg(angle);
 };
 
+void ofApp::cubes(){
+  ofPushMatrix();
+  ofPushStyle();
+  
+  ofPopMatrix();
+  ofPopStyle();
+};
 
 void ofApp::camera(){
   ofPushMatrix();
   ofPushStyle();
-  ofTranslate(ofGetWidth() * -.5, ofGetHeight() * -.5);
-  
   sceneRotation = ofMap(midi->knobsONE[0], 0, 100, 360, 0);
   sceneRotationIncFactor = ofMap(midi->knobsONE[8], 0, 100, 1, .001);
   
@@ -35,6 +39,8 @@ void ofApp::camera(){
   
   float angle = sceneRotation + sceneRotationInc;
   ofRotateDeg(angle);
+  
+  ofTranslate(ofGetWidth() * -.5, ofGetHeight() * -.5);
   
   ofEnableBlendMode(OF_BLENDMODE_DISABLED);
   ofSetColor(color->palette[0]);
@@ -68,6 +74,7 @@ void ofApp::circle(){
   
   
   for(unsigned int i = 0; i < circNumb; i++){
+    if (i >= i *.5) i = i* .5 - (i - i * .5);
     int circAlpha = ofMap(i, 0, circNumb, 100, 250);
     
     ofColor circColor;

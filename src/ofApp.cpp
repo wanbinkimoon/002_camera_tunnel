@@ -8,11 +8,8 @@ void ofApp::setup(){
   color->palette[0] = ofColor(36,36,55,255);
   color->palette[1] = ofColor(124,127,255,255);
   
-  camWidth = ofGetWidth();
-  camHeight = ofGetHeight();
-  
   vidGrabber.setVerbose(true);
-  vidGrabber.setup(camWidth,camHeight);
+  vidGrabber.setup(ofGetWidth(),ofGetHeight());
 
   ofEnableAlphaBlending();
   
@@ -33,6 +30,7 @@ void ofApp::draw(){
   ofApp::scene();
   
   if(midi->padsONE[0]) ofApp::camera();
+  if(midi->padsONE[1]) ofApp::cubes();
   if(midi->padsTWO[0]) ofApp::circle();
 
 //  shader.end();
@@ -85,7 +83,7 @@ void ofApp::mouseExited(int x, int y){
 
 //--------------------------------------------------------------
 void ofApp::windowResized(int w, int h){
-  
+  vidGrabber.setup(ofGetWidth(),ofGetHeight());
 }
 
 //--------------------------------------------------------------

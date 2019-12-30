@@ -20,12 +20,12 @@ public:
   void draw();
   
   void scene();
+  void cubes();
   void camera();
   void circle();
   
   float cubesRotationInc = 0.1;
   float cubesRotationIncFactor = .001;
-  
   
   void keyPressed(int key);
   void keyReleased(int key);
@@ -42,8 +42,8 @@ public:
   ofShader shader;
   
   ofVideoGrabber vidGrabber;
-  int camWidth;
-  int camHeight;
+//  int camWidth;
+//  int camHeight;
   
   float sceneRotation = 0;
   float sceneRotationInc = 0.1;
